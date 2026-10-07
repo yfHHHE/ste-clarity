@@ -9,6 +9,7 @@ Before scoring clarity, compare the source and the result. Confirm that:
 - Performance expectations and other constraints remain, even when they need clarification.
 - No unsupported causes, owners, thresholds, advice, or details were added.
 - Unresolved ambiguity is retained or flagged rather than silently resolved.
+- The requested output language and source script are respected. Chinese obligation markers, logical conditions, omitted actors, and qualifiers retain their meaning; translations are checked for semantic equivalence, not word-for-word similarity.
 
 **PASS:** All checks hold for the requested transformation.
 **FAIL:** The result changes or invents meaning. Report the specific change and repair it before assigning a clarity rating.

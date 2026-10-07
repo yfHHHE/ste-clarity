@@ -6,10 +6,10 @@
   "plugins": [
     {
       "name": "ste-clarity",
-      "description": "Clear technical writing that preserves facts, uncertainty, and obligation strength.",
+      "description": "Meaning-preserving clarity editing for English and Chinese technical writing.",
       "source": "./",
       "category": "productivity"
     }
   ],
-  "description": "Meaning-preserving clarity editing for technical writing."
+  "description": "Meaning-preserving clarity editing for English and Chinese technical writing."
 }

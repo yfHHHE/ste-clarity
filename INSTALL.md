@@ -81,6 +81,8 @@ Ask the agent to rewrite:
 
 The answer must retain the recommendation and performance expectation. It may flag “quickly” and “useful” as undefined; it must not invent a response-time target or replace “should” with “must.”
 
+For Chinese, try: `请改写：核心功能基本完成，预计周五完成联调，暂未发现阻塞问题。` The result must retain “基本”, “预计”, and “暂未”; it must not claim completion, a confirmed deadline, or absence of problems.
+
 A successful installation does not prove this behavior. Validate it in the agent you use.
 
 ## Activation

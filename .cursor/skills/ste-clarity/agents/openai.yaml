@@ -1,4 +1,4 @@
 interface:
   display_name: "STE Clarity"
-  short_description: "Clear technical writing without changing meaning"
-  default_prompt: "Use $ste-clarity to rewrite this technical text clearly while preserving its meaning."
+  short_description: "Clear English and Chinese technical writing"
+  default_prompt: "Use $ste-clarity to clarify this technical text in its original language while preserving meaning."

@@ -1,22 +1,28 @@
 ---
 name: ste-clarity
 license: MIT
-description: "Write, rewrite, or review technical English for clarity while preserving meaning. Use for technical documents, procedures, requirements, and engineering reports when drafting or clarity editing is the task. Supports practical STE-80, strict STE review, and lint-only review."
+description: "Write, rewrite, or review technical content in English, Simplified Chinese, Traditional Chinese, or mixed Chinese-English while preserving meaning. 支持中文技术写作、改写和审阅。 Use for technical documents, procedures, requirements, and engineering reports when drafting or clarity editing is the task. Supports practical STE-80, strict STE review, and lint-only review."
 ---
 
 # STE Clarity
 
-Make technical English easy to understand and hard to misread. This skill is inspired by ASD-STE100 Issue 9; STE-80 is a practical style, not a compliance level or an 80% compliance score. Do not claim certification or ASD/STEMG endorsement.
+Make technical English and Chinese easy to understand and hard to misread. This skill is inspired by ASD-STE100 Issue 9; STE-80 is a practical style, not a compliance level or an 80% compliance score. Do not claim certification or ASD/STEMG endorsement.
 
 ## Scope and modes
 
 Apply this skill to the requested text or deliverable. Do not turn unrelated tasks into writing reviews or impose a permanent conversation style. Respect the user's audience, language, format, and requested depth.
 
-- **STE-80 (default):** Improve clarity while retaining natural technical English.
-- **Strict review:** Use when explicitly requested. Check against the requested edition of the official standard and applicable terminology. If these sources are unavailable, provide a preliminary clarity review and identify what needs verification. Separate source-supported violations, items requiring verification, and suggested revisions. Do not label a style preference a formal violation or claim compliance from an LLM review alone.
+- **STE-80 (default):** Improve clarity while retaining natural technical English or Chinese.
+- **Strict review (English only):** Use when explicitly requested. Chinese clarity editing is not ASD-STE100 compliance review. If strict review is requested for Chinese content, explain this boundary briefly, review its clarity, and offer an English translation only if useful; do not translate without a request. For bilingual content, limit formal STE findings to the English text. Check against the requested edition of the official standard and applicable terminology. If these sources are unavailable, provide a preliminary clarity review and identify what needs verification. Separate source-supported violations, items requiring verification, and suggested revisions. Do not label a style preference a formal violation or claim compliance from an LLM review alone.
 - **Lint only:** Identify important problems without producing a full rewrite. Quote the fragment, explain the problem, and give the smallest correction or clarification needed.
 
 If modes overlap, respect both: a strict lint request needs findings and verification limits, not a full revision.
+
+## Language selection
+
+Follow the explicitly requested output language. Otherwise preserve the source language and script for rewrites; a Chinese instruction to edit English does not itself request translation. For newly authored content and review notes, use the user's language unless instructed otherwise. For mixed-language content, preserve established technical terms and identifiers; do not translate everything or convert Simplified/Traditional Chinese by default.
+
+For Chinese or bilingual tasks, read [Chinese guidance](references/chinese.md). Apply the same meaning-integrity gate in every language. Keep review notes separate from the deliverable when their languages differ.
 
 ## Governing rule: preserve meaning
 

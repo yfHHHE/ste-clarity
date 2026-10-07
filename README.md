@@ -2,7 +2,7 @@
 
 **Make technical writing clearer without changing what it means.**
 
-An agent skill for technical explanations, procedures, API documentation, requirements, and engineering reports. It preserves facts, uncertainty, conditions, and the difference between **should**, **may**, and **must**.
+An agent skill for **English, Simplified Chinese, Traditional Chinese, and mixed Chinese-English** technical explanations, procedures, API documentation, requirements, and engineering reports. It preserves facts, uncertainty, conditions, and the difference between **should**, **may**, and **must**.
 
 ## Install
 
@@ -29,7 +29,7 @@ The rewrite retains the recommendation. It does not invent an API, required fiel
 ## Three modes
 
 - **STE-80:** Practical clarity editing. The default.
-- **Strict review:** Source-backed review against the requested official standard and terminology, with explicit verification limits.
+- **Strict review (English only):** Source-backed review against the requested official standard and terminology, with explicit verification limits.
 - **Lint only:** Find important problems without rewriting the whole text.
 
 Try:
@@ -39,6 +39,24 @@ Rewrite this in STE-80. Preserve all technical meaning.
 Lint this requirement for ambiguity. Do not rewrite it.
 Review this procedure and flag missing conditions without inventing them.
 ```
+
+## 中文支持
+
+支持中文技术写作、改写与审阅，也支持中英混合内容。保留“必须 / 应当 / 可以 / 不得”的约束强度，以及“预计 / 暂未 / 基本”等限定语。
+
+```text
+使用 $ste-clarity 改写下面的中文，保留原意，不补充未知事实。
+请只审阅这段需求的歧义，不要重写。
+请改写这段英文，保留英文；用中文说明仍需确认的问题。
+```
+
+未指定输出语言时，改写保留原文语言及简繁体。中文指令不会自动触发翻译。中文审阅不属于 ASD-STE100 合规审阅。
+
+**原文：** 目前核心功能基本完成，预计周五完成联调，暂未发现阻塞问题。
+
+**改写：** 核心功能目前基本完成。预计周五完成联调。暂未发现阻塞问题。
+
+See [Chinese guidance](skills/ste-clarity/references/chinese.md) and [Chinese/bilingual examples](skills/ste-clarity/examples/chinese.md).
 
 ## What it protects
 
