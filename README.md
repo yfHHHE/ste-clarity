@@ -1,5 +1,7 @@
 # STE Clarity
 
+English | [简体中文](README.zh-CN.md)
+
 **Make technical writing clearer without changing what it means.**
 
 An agent skill for **English, Simplified Chinese, Traditional Chinese, and mixed Chinese-English** technical explanations, procedures, API documentation, requirements, and engineering reports. It preserves facts, uncertainty, conditions, and the difference between **should**, **may**, and **must**.
