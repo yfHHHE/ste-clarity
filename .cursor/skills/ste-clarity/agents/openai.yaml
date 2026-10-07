@@ -1,4 +1,6 @@
 interface:
   display_name: "STE Clarity"
-  short_description: "Clear English and Chinese technical writing"
-  default_prompt: "Use $ste-clarity to clarify this technical text in its original language while preserving meaning."
+  short_description: "Clearer AI responses in English and Chinese"
+  default_prompt: "Use $ste-clarity for this conversation until I ask to turn it off."
+policy:
+  allow_implicit_invocation: false

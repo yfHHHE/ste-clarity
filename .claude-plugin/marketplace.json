@@ -6,10 +6,10 @@
   "plugins": [
     {
       "name": "ste-clarity",
-      "description": "Meaning-preserving clarity editing for English and Chinese technical writing.",
+      "description": "Opt-in clarity for everyday AI responses, explanations, advice, planning, and writing.",
       "source": "./",
       "category": "productivity"
     }
   ],
-  "description": "Meaning-preserving clarity editing for English and Chinese technical writing."
+  "description": "Opt-in clarity for everyday AI responses, explanations, advice, planning, and writing."
 }

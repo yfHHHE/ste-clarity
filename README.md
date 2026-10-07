@@ -2,99 +2,98 @@
 
 English | [简体中文](README.zh-CN.md)
 
-**Make technical writing clearer without changing what it means.**
+**Clearer AI responses. Same meaning. Less effort to follow.**
 
-An agent skill for **English, Simplified Chinese, Traditional Chinese, and mixed Chinese-English** technical explanations, procedures, API documentation, requirements, and engineering reports. It preserves facts, uncertainty, conditions, and the difference between **should**, **may**, and **must**.
+An opt-in style for everyday questions, explanations, advice, planning, comparisons, and writing—not just technical documents. Supports English, Simplified Chinese, Traditional Chinese, and mixed-language conversations.
 
-## Install
+Invoke it once. It stays active for the conversation until you turn it off.
+
+## Install and activate
 
 Ask your coding agent:
 
 ```text
-Install the ste-clarity skill/plugin from https://github.com/yfHHHE/ste-clarity. Follow the repository's AGENTS.md and INSTALL.md. Install globally for my user account.
+Install the ste-clarity skill/plugin from https://github.com/yfHHHE/ste-clarity. Follow AGENTS.md and INSTALL.md. Install globally for my user account.
 ```
 
-Or follow the [installation guide](INSTALL.md) for Codex, Claude Code, and compatible skill-based agents.
+Then activate:
 
-## Before and after
+- **Codex:** `$ste-clarity`
+- **Claude Code:** `/ste-clarity:ste-clarity`
+- **Direct request:** “Enable STE Clarity for this conversation.”
 
-**Before**
+Installation alone does not turn it on. Say **“stop clarity mode”** or **“关闭清晰模式”** to turn it off. Invoke again to reactivate. See the [installation guide](INSTALL.md) for platform details and updates.
 
-> In circumstances where verification is unsuccessful, relevant information relating to the reason for the unsuccessful verification should ideally be made available to downstream consumers so that they can understand what happened.
+## What changes
 
-**After**
+1. **Answer first.** Lead with what the user needs, without generic preambles.
+2. **Easy to follow.** Use concrete language, clear connections, and consistent terms.
+3. **Structure that fits.** Use steps for a procedure and comparisons for a choice. A simple answer can stay one sentence.
+4. **Enough depth.** Keep important details, alternatives, and requested explanations. Clear does not mean always short.
+5. **Honest meaning.** Preserve uncertainty and conditions. Distinguish facts from assumptions and advice.
 
-> When verification fails, downstream consumers should ideally receive information that explains the failure.
+No mandatory headings, word limits, or closing action. Emotional support can be warm; creative requests can be playful. A special request changes the answer's form without resetting the conversation mode.
 
-The rewrite retains the recommendation. It does not invent an API, required fields, or a mandatory contract. See [more examples](skills/ste-clarity/examples/before-after.md).
+## Everyday example
 
-## Three modes
+**User:** I have 20 minutes to tidy my room. Where do I start?
 
-- **STE-80:** Practical clarity editing. The default.
-- **Strict review (English only):** Source-backed review against the requested official standard and terminology, with explicit verification limits.
-- **Lint only:** Find important problems without rewriting the whole text.
+**Response:**
 
-Try:
+> Start with the floor so you can move around easily. Try this 20-minute plan:
+>
+> 1. Spend 5 minutes collecting rubbish and dishes.
+> 2. Spend 10 minutes putting loose items where they belong, starting with the floor.
+> 3. Spend 5 minutes clearing one surface you use often.
+>
+> If you run out of time, leave the remaining areas for another session.
 
-```text
-Rewrite this in STE-80. Preserve all technical meaning.
-Lint this requirement for ambiguity. Do not rewrite it.
-Review this procedure and flag missing conditions without inventing them.
-```
+This is a proposed plan, not an invented claim about the user's room. See [general conversation examples](skills/ste-clarity/examples/conversation.md).
 
 ## 中文支持
 
-支持中文技术写作、改写与审阅，也支持中英混合内容。保留“必须 / 应当 / 可以 / 不得”的约束强度，以及“预计 / 暂未 / 基本”等限定语。
+明确启用后，清晰模式会持续作用于本次对话，适用于日常问答、解释、建议、计划、比较和写作。
 
 ```text
-使用 $ste-clarity 改写下面的中文，保留原意，不补充未知事实。
-请只审阅这段需求的歧义，不要重写。
-请改写这段英文，保留英文；用中文说明仍需确认的问题。
+启用 STE Clarity，直到我说关闭。
+我有很多事要做，不知道先做哪件。
 ```
 
-未指定输出语言时，改写保留原文语言及简繁体。中文指令不会自动触发翻译。中文审阅不属于 ASD-STE100 合规审阅。
+**回答示例：** 先选一件今天不做就会有明确后果的事。如果没有，就选最能减轻你压力的一件。把它缩小成一个现在能开始的动作，例如打开要处理的文件。
 
-**原文：** 目前核心功能基本完成，预计周五完成联调，暂未发现阻塞问题。
+保留“必须 / 应当 / 可以 / 不得”和“预计 / 暂未 / 基本”的含义。改写默认保留原文语言及简繁体，不因中文提问就自动翻译英文原文。
 
-**改写：** 核心功能目前基本完成。预计周五完成联调。暂未发现阻塞问题。
+[完整中文说明](README.zh-CN.md) · [中文表达指南](skills/ste-clarity/references/chinese.md) · [中文与双语示例](skills/ste-clarity/examples/chinese.md)
 
-See [Chinese guidance](skills/ste-clarity/references/chinese.md) and [Chinese/bilingual examples](skills/ste-clarity/examples/chinese.md).
+## Scope and persistence
 
-## What it protects
+The style stays active across topics in the current conversation after explicit invocation. New conversations start inactive. A direct stop request disables it; quoted text such as “translate ‘stop clarity mode’” does not.
 
-1. Facts, numbers, units, identifiers, and sequence.
-2. Obligation, permission, prohibition, and uncertainty.
-3. Conditions, exceptions, and performance expectations.
-4. Unknown actors and missing information: flagged, not guessed.
-5. Meaning integrity: a mandatory gate before clarity scoring.
+This is instruction-based persistence, not a runtime hook. If a host discards the conversation context, you may need to invoke the skill again. Hosts differ in whether they enforce invocation metadata; verify your agent's behavior. The skill does not change global user rules.
 
-The skill applies to the requested deliverable. It does not impose a permanent conversation style. Compatible agents may select it automatically for relevant writing tasks; explicit invocation is also available.
+## Technical writing remains available
 
-## About STE-80
+When requested, the skill also helps rewrite, translate, or review procedures, requirements, API docs, and reports. It preserves facts, actors, quantities, conditions, and obligation strength. Missing information is flagged rather than guessed. New advice and creative proposals remain welcome when the user requests them.
 
-STE-80 is a practical style name, **not an 80% compliance score**. The skill is inspired by ASD-STE100 Simplified Technical English and references Issue 9. Formal review requires the applicable official edition and organization terminology.
+- [Technical content guidance](skills/ste-clarity/references/ste80-rules.md)
+- [Technical examples](skills/ste-clarity/examples/before-after.md)
+- [Review rubric](skills/ste-clarity/references/review-checklist.md)
+- [Strict STE review guidance](skills/ste-clarity/references/strict-review.md)
 
-This project is not affiliated with, endorsed by, or certified by ASD or STEMG. It does not distribute the official standard or certify compliance. See the [official ASD-STE100 site](https://www.asd-ste100.org/).
+STE-80 is a practical clarity approach, not an 80% compliance score. Formal ASD-STE100 review concerns English and requires the applicable official edition and organization terminology. Chinese clarity review does not establish STE compliance.
 
-## Repository
+This project is inspired by ASD-STE100 but is not affiliated with, endorsed by, or certified by ASD/STEMG. It does not distribute the official standard or certify compliance. See the [official site](https://www.asd-ste100.org/).
 
-- [Canonical skill](skills/ste-clarity/SKILL.md): instructions and mode selection.
-- [Content guidance](skills/ste-clarity/references/ste80-rules.md): procedures, requirements, APIs, and reports.
-- [Review rubric](skills/ste-clarity/references/review-checklist.md): integrity gate and clarity scoring.
-- [Agent guide](AGENTS.md) and [contribution guide](CONTRIBUTING.md): maintenance and checks.
-
-The Codex and Claude manifests package the same canonical skill. The Cursor copy is checked for exact equality. There are no runtime hooks, network calls, or executable installation scripts in the skill.
-
-## Validation
+## Validation and maintenance
 
 ```bash
 python3 scripts/check_package.py
 ```
 
-This checks package consistency and local documentation links. It does not prove model behavior or formal STE compliance. See [behavioral evaluation cases](evals/README.md) for manual testing.
+Checks package consistency, explicit-only metadata, and local links. It does not prove live activation or cross-model behavior. See [behavioral evaluation cases and recorded runs](evals/README.md).
+
+The [canonical skill](skills/ste-clarity/SKILL.md) is shared by Codex and Claude; the Cursor mirror is checked for equality. See [AGENTS.md](AGENTS.md) and [CONTRIBUTING.md](CONTRIBUTING.md) for maintenance.
 
 ## Credits and license
 
-Repository packaging was inspired by [i-have-adhd](https://github.com/ayghri/i-have-adhd). STE Clarity is an independent skill with a different scope and activation policy.
-
-[MIT License](LICENSE).
+Packaging was inspired by [i-have-adhd](https://github.com/ayghri/i-have-adhd). STE Clarity is an independent skill. [MIT License](LICENSE).

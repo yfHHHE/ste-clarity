@@ -1,7 +1,7 @@
 {
   "name": "ste-clarity",
-  "version": "0.2.0",
-  "description": "Clear English and Chinese technical writing that preserves facts, uncertainty, and obligation strength.",
+  "version": "0.3.0",
+  "description": "Opt-in clarity for all AI responses in English and Chinese, active for the conversation until stopped.",
   "author": {
     "name": "yfHHHE",
     "url": "https://github.com/yfHHHE"

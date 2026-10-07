@@ -2,7 +2,7 @@
 
 ## Installing for a user
 
-Read `README.md`, `INSTALL.md`, and `skills/ste-clarity/SKILL.md`. Follow the route for the user's agent and requested scope. A global install means that user's skill or plugin directory, not all accounts on the machine. Preserve existing customized installations. Do not change persistent conversation rules or enable an always-on mode as part of installation.
+Read `README.md`, `INSTALL.md`, and `skills/ste-clarity/SKILL.md`. Follow the route for the user's agent and requested scope. A global install means that user's skill or plugin directory, not all accounts on the machine. Preserve existing customized installations. Installation does not activate the skill. Preserve explicit-only invocation metadata. When a user invokes the skill, its clarity style stays active in that conversation until stopped; do not add global rules or always-on hooks.
 
 ## Maintaining the repository
 

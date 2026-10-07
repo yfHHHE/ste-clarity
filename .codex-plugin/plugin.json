@@ -1,7 +1,7 @@
 {
   "name": "ste-clarity",
-  "version": "0.2.0",
-  "description": "Clear English and Chinese technical writing that preserves facts, uncertainty, and obligation strength.",
+  "version": "0.3.0",
+  "description": "Opt-in clarity for all AI responses in English and Chinese, active for the conversation until stopped.",
   "author": {
     "name": "yfHHHE",
     "url": "https://github.com/yfHHHE"
@@ -12,7 +12,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "STE Clarity",
-    "shortDescription": "Clear English and Chinese technical writing",
+    "shortDescription": "Clearer AI responses in English and Chinese",
     "developerName": "yfHHHE",
     "category": "Productivity",
     "capabilities": [
@@ -20,7 +20,7 @@
     ],
     "websiteURL": "https://github.com/yfHHHE/ste-clarity",
     "defaultPrompt": [
-      "Rewrite this technical text using STE Clarity."
+      "Enable STE Clarity for this conversation."
     ]
   }
 }

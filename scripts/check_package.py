@@ -23,6 +23,9 @@ def main():
     frontmatter = skill.split("---", 2)[1]
     check("name: ste-clarity" in frontmatter, "Wrong skill name")
     check("description:" in frontmatter, "Missing skill description")
+    check(re.search(r"(?m)^disable-model-invocation: true$", frontmatter), "Claude explicit-only invocation is missing")
+    policy = (CANONICAL / "agents/openai.yaml").read_text()
+    check(re.search(r"(?m)^policy:\n  allow_implicit_invocation: false$", policy), "Codex explicit-only invocation is missing")
     check(files_at(CANONICAL) == files_at(MIRROR), "Cursor mirror differs from canonical skill")
 
     manifests = [json.loads((ROOT / f".{agent}-plugin/plugin.json").read_text()) for agent in ("codex", "claude")]
@@ -45,7 +48,7 @@ def main():
                 continue
             target = target.split("#", 1)[0]
             check((path.parent / target).exists(), f"Broken local link in {path.relative_to(ROOT)}: {target}")
-    print("PASS: skill metadata, complete Cursor mirror, plugin manifests, and local links")
+    print("PASS: skill metadata, complete Cursor mirror, plugin manifests, explicit-only invocation metadata, and local links")
 
 
 if __name__ == "__main__":

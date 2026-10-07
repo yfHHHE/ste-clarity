@@ -10,7 +10,7 @@ codex plugin add ste-clarity@ste-clarity
 codex plugin list
 ```
 
-Start a new chat and invoke `$ste-clarity`.
+Start a new chat and invoke `$ste-clarity`. It then applies to all responses in that conversation until you say “stop clarity mode” or “关闭清晰模式”.
 
 To update:
 
@@ -57,7 +57,7 @@ claude plugin install ste-clarity@ste-clarity --scope user
 claude plugin list
 ```
 
-Start a new chat and invoke `/ste-clarity:ste-clarity`.
+Start a new chat and invoke `/ste-clarity:ste-clarity`. It then applies to all responses in that conversation until you turn it off.
 
 To update:
 
@@ -75,16 +75,19 @@ claude plugin marketplace remove ste-clarity
 
 ## Verify behavior
 
-Ask the agent to rewrite:
+1. Explicitly enable STE Clarity, then ask a simple everyday question.
+2. Change topics and ask for a plan or comparison. The style should remain active without reinvocation.
+3. Ask for a detailed explanation or a poem. The requested depth or form should be preserved.
+4. Say “stop clarity mode” or “关闭清晰模式”. The agent should confirm and stop applying the skill.
 
-> The API should quickly return useful error information.
+For Chinese, try: `我只有 20 分钟整理房间，应该先做什么？` The answer should offer a practical proposal without inventing facts about your room.
 
-The answer must retain the recommendation and performance expectation. It may flag “quickly” and “useful” as undefined; it must not invent a response-time target or replace “should” with “must.”
+A successful installation does not prove these behaviors. See [evaluation cases](evals/README.md) and test the agent you use.
 
-For Chinese, try: `请改写：核心功能基本完成，预计周五完成联调，暂未发现阻塞问题。` The result must retain “基本”, “预计”, and “暂未”; it must not claim completion, a confirmed deadline, or absence of problems.
+## Activation and compatibility
 
-A successful installation does not prove this behavior. Validate it in the agent you use.
+Installation alone does not activate the skill. Codex uses `policy.allow_implicit_invocation: false` in `agents/openai.yaml`; Claude uses `disable-model-invocation: true` in `SKILL.md`. Invoke explicitly or directly ask the agent to enable STE Clarity. Discussion of the skill or quoted commands must not activate it.
 
-## Activation
+Once active, it stays on across topics for the current conversation until you ask to stop. Say “stop clarity mode”, “normal mode”, “关闭清晰模式”, or “恢复普通模式”. Invoke again to reactivate. A request to apply it only to one answer limits its scope accordingly.
 
-The skill permits normal automatic selection for relevant writing tasks. It has no always-on hook and does not modify persistent user instructions. Invoking it requests clarity editing for the supplied content, not a permanent mode for unrelated work.
+There are no always-on hooks or edits to persistent user instructions. A new conversation starts inactive. Persistence depends on the host retaining the conversation instructions; a host that discards context may require reinvocation. Other agents may interpret invocation metadata differently; verify their behavior instead of assuming these controls are enforced.

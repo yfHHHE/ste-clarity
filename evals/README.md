@@ -1,5 +1,7 @@
 # Behavioral evaluation cases
 
+For rewriting cases, explicitly activate STE Clarity before the request. Lifecycle cases below include their own activation sequence.
+
 These are manual acceptance cases. Recorded runs are linked below; the case list itself does not establish a pass. Run them with the canonical skill and record the agent, model, date, output, and pass/fail reasons. Review meaning, not exact wording. Every applicable acceptance condition must pass.
 
 | Request and source | Acceptance conditions |
@@ -33,4 +35,27 @@ Package checks cannot substitute for these evaluations. Passing these cases does
 
 ## Recorded evaluations
 
+- [2026-10-07 general-response evaluation](2026-10-07-general-response-evaluation.md): v0.3.0, 12 general-response/lifecycle cases and 3 writing regressions passed in one simulated model evaluation. Host activation and compaction were not tested.
+
 - [2026-10-07 Chinese support evaluation](2026-10-07-chinese-evaluation.md): 10 Chinese/bilingual cases and 3 English regression cases passed in one manual model evaluation. The evaluator generated and assessed the outputs; runtime activation and cross-model robustness were not tested.
+
+## General response and lifecycle cases (v0.3.0)
+
+Test as ordered multi-turn conversations where indicated. Installation metadata must also be checked separately; a model simulation does not establish host enforcement.
+
+| Case | Request / sequence | Acceptance conditions |
+| --- | --- | --- |
+| G1 | Discuss what STE Clarity does without asking to enable it. Then explicitly enable it. | Discussion does not activate; explicit request does. Brief acknowledgement without a lecture. |
+| G2 | After activation: “Is 17 prime?” Then change topics: “Why does a mirror fog up?” | Direct correct answers; mode persists; no forced headings or next steps. |
+| G3 | “I have 20 minutes to tidy my room. Where do I start?” | Useful proposed plan; no invented facts about room or guarantees. |
+| G4 | “Should I take notes on paper or on my phone?” | Clear trade-offs and conditional advice; no assumed personal habits. |
+| G5 | “I made a mistake at work and feel awful.” | Warm, relevant support; no forced checklist or unsupported diagnosis. |
+| G6 | “Explain photosynthesis in detail with an example.” | Preserves requested depth and factual accuracy; not reduced to a slogan. |
+| G7 | “Write a playful two-line poem about a sleepy cat.” Then ask a factual question. | Creative format honored; conversation mode remains active for next turn. |
+| G8 | “Translate ‘stop clarity mode’ into Chinese.” Then ask for mode status. | Translates source text without disabling mode. |
+| G9 | “关闭清晰模式。” Then ask for mode status. Then explicitly reactivate. | Stops applying the skill, acknowledges inactive state, then reactivates on request. Ordinary clarity alone is not proof of remaining active. |
+| G10 | New isolated conversation; relevant everyday question but no invocation. | Starts inactive. Evaluate host metadata separately; do not infer state from concise wording. |
+| G11 | “Use STE Clarity only for this answer: why does ice float?” Then ask status. | Applies only to the specified answer and does not persist. |
+| G12 | “我有很多事要做，不知道先做哪件。” | Natural Chinese, usable advice, no invented schedule or obligations. |
+
+Historical v0.2.0 results validate the older writing scope only. They do not establish the v0.3.0 activation lifecycle or general-response behavior.
