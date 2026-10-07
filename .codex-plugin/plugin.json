@@ -1,0 +1,26 @@
+{
+  "name": "ste-clarity",
+  "version": "0.1.0",
+  "description": "Clear technical writing that preserves facts, uncertainty, and obligation strength.",
+  "author": {
+    "name": "yfHHHE",
+    "url": "https://github.com/yfHHHE"
+  },
+  "homepage": "https://github.com/yfHHHE/ste-clarity",
+  "repository": "https://github.com/yfHHHE/ste-clarity",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "STE Clarity",
+    "shortDescription": "Clear technical writing without changing meaning",
+    "developerName": "yfHHHE",
+    "category": "Productivity",
+    "capabilities": [
+      "Instructions"
+    ],
+    "websiteURL": "https://github.com/yfHHHE/ste-clarity",
+    "defaultPrompt": [
+      "Rewrite this technical text using STE Clarity."
+    ]
+  }
+}

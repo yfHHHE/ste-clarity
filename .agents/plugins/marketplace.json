@@ -1,0 +1,21 @@
+{
+  "name": "ste-clarity",
+  "interface": {
+    "displayName": "STE Clarity"
+  },
+  "plugins": [
+    {
+      "name": "ste-clarity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/yfHHHE/ste-clarity.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

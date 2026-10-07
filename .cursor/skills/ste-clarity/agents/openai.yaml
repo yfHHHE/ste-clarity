@@ -1,0 +1,4 @@
+interface:
+  display_name: "STE Clarity"
+  short_description: "Clear technical writing without changing meaning"
+  default_prompt: "Use $ste-clarity to rewrite this technical text clearly while preserving its meaning."
